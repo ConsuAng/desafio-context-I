@@ -14,10 +14,14 @@ function App() {
   const url = "/fotos.json";
 
   async function getPhotos() {
-    const res = await axios.get(url)
-    const { data } = await res;
-    const dataPhotos = data.photos
-    setPhotos(dataPhotos)
+    try {
+      const res = await axios.get(url)
+      const { data } = await res;
+      const dataPhotos = data.photos
+      setPhotos(dataPhotos)
+    } catch(error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {
