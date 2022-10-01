@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound";
 function App() {
   const [photos, setPhotos] = useState([]);
   const globalPhotos = {photos, setPhotos};
-  const url = "../public/fotos.json";
+  const url = "/fotos.json";
 
   async function getPhotos() {
     const res = await axios.get(url)
